@@ -131,8 +131,8 @@ forge test --report debug
 
 # Scope
 
->[!NOTE]
->The repo code is the final word on functionality. Protocol documentation may not be the most up to date.
+**NOTE**
+_**The repo code is the final word on functionality. Protocol documentation may not be the most up to date.**_
 
 - Files in scope:
 
