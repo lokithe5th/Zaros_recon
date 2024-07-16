@@ -80,13 +80,13 @@ faced by large smart contract systems, by introducing the following solutions:
 
 ## Actors
 
-- eDAO: The "Executioner DAO" role. It's a multi-sig wallet responsible by configuring protocol parameters and is set as the
+- eDAO (Trusted): The "Executioner DAO" role. It's a multi-sig wallet responsible by configuring protocol parameters and is set as the
   `owner`.
 - Trader: Protocol user which may call all non-restricted external functions.
-- Market Order Keeper: Chainlink Automation compatible contract that is reponsible by filling market orders.
-- Liquidation Keeper: Chainlink Automation compatible contract or allowlisted EOA that has the permission of liquidating
+- Market Order Keeper (Trusted): Chainlink Automation compatible contract that is reponsible by filling market orders.
+- Liquidation Keeper (Trusted): Chainlink Automation compatible contract or allowlisted EOA that has the permission of liquidating
   trading accounts when their MMR is below 1.
-- Offchain Orders Keeper: EOA responsible by filling offchain offchain orders (e.g Limit, TP/SL).
+- Offchain Orders Keeper (Trusted): EOA responsible by filling offchain offchain orders (e.g Limit, TP/SL).
 
 [//]: # (contest-details-close)
 
@@ -130,6 +130,9 @@ forge test --report debug
 [//]: # (scope-open)
 
 # Scope
+
+>[!NOTE]
+>The repo code is the final word on functionality. Protocol documentation may not be the most up to date.
 
 - Files in scope:
 
@@ -214,7 +217,7 @@ Tokens:
     - USDT
     - USDE
     - SUSDE
-    - ERC721 (Zaros Account NFT)
+    - ERC721 (Zaros Account NFT, AccountNFT.sol)
 
 [//]: # (scope-close)
 
@@ -228,5 +231,7 @@ Tokens:
   accounts could temporarily turn unprofitable for keepers. This may be mitigated by emergency pausing the markets if happens
   for a prolonged period, or through additional financing from the DAO.
 - Function selectors of all branches must be explicitly set in order to be callable at the `RootProxy`.
+
+Any issues as detailed by the previous Cyfrin audit report available [Here](https://github.com/Cyfrin/cyfrin-audit-reports/blob/main/reports/2024-07-13-cyfrin-zaros-v2.0.pdf)
 
 [//]: # (known-issues-close)
