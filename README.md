@@ -218,6 +218,8 @@ Tokens:
 
 [//]: # (scope-close)
 
+[//]: # (known-issues-open)
+
 ## Known Issues
 
 - Centralization vectors: we're aware that the multi-sig responsible by configuring protocol parameters has admin
@@ -226,3 +228,5 @@ Tokens:
   accounts could temporarily turn unprofitable for keepers. This may be mitigated by emergency pausing the markets if happens
   for a prolonged period, or through additional financing from the DAO.
 - Function selectors of all branches must be explicitly set in order to be callable at the `RootProxy`.
+
+[//]: # (known-issues-close)
