@@ -107,7 +107,7 @@ faced by large smart contract systems, by introducing the following solutions:
 
 ```bash
 git clone https://github.com/Cyfrin/2024-07-zaros.git
-cd 2024-07-zaros/zaros-core
+cd 2024-07-zaros
 make
 ````
 
